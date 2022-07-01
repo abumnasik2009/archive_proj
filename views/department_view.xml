@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_department_tree" model="ir.ui.view">
+        <field name="name">department_tree</field>
+        <field name="model">archive.department</field>
+
+        <field name="arch" type="xml">
+            <tree string="Model courts">
+
+                <field name="depart_name"/>
+
+
+
+
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_department_search" model="ir.ui.view">
+        <field name="name">department_search</field>
+        <field name="model">archive.department</field>
+        <field name="arch" type="xml">
+            <search>
+
+                <field name="depart_name"/>
+            </search>
+        </field>
+    </record>
+
+
+    <record id="view_department_form" model="ir.ui.view">
+        <field name="name">courts_search</field>
+        <field name="model">archive.department</field>
+        <field name="arch" type="xml">
+            <form string="Model courts">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="depart_name"/>
+
+
+
+                        </group>
+                        <group>
+
+                        </group>
+                    </group>
+                </sheet>
+                <!--add chatter
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>   -->
+
+            </form>
+        </field>
+    </record>
+
+    <record id="action_department" model="ir.actions.act_window">
+        <field name="name">تخصصات المحاكم</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">archive.department</field>
+        <field name="view_mode">tree,form</field>
+        <!-- set a default filter -->
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                hi frazdaq please insert new record
+            </p>
+        </field>
+
+    </record>
+
+
+
+
+
+
+
+
+   <!-- <menuitem id="operation4"
+              name="الاقسام"
+              action="action_department"
+              parent="configuration"
+              sequence="0"/> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</odoo>
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Root menu -->
+    <menuitem id="archive_root"
+              name="الارشفة الالكترونية"
+              sequence="0"/>
+
+
+     <!-- Root menu -->
+    <menuitem id="menu_archive_master"
+              name="أرشفة القضايا "
+              parent="archive_root"
+              sequence="0"/>
+
+    <menuitem id="configuration"
+              name="الاعدادات"
+              parent="archive_root"
+              sequence="0"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</odoo>

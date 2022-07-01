@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_case_archive_process_tree" model="ir.ui.view">
+        <field name="name">case_archive_process_tree</field>
+        <field name="model">archive.process</field>
+        <field name="arch" type="xml">
+            <tree string="Model operation">
+
+                <field name="case_no1"/>
+
+
+                <field name="case_no2"/>
+                <field name="case_no3"/>
+                <field name="case_owner"/>
+                <field name="court_members1"/>
+                <field name="court_members2"/>
+                <field name="court_members3"/>
+                <field name="case_date"/>
+                <field name="case_text_info"/>
+
+
+
+                <field name="active" invisible="1"/>
+
+
+
+
+
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_case_archive_process_search" model="ir.ui.view">
+        <field name="name">case_archive_process_search</field>
+        <field name="model">archive.process</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="case_no1"/>
+
+                <field name="case_no2"/>
+                <field name="case_no3"/>
+                <field name="case_owner"/>
+                <field name="court_members1"/>
+                <field name="court_members2"/>
+                <field name="court_members3"/>
+                <field name="case_date"/>
+                <field name="case_text_info"/>
+                <field name="active" invisible="1"/>
+
+                <filter name="filter_archive" string="Archive" domain="[('active', '=',False)]"/>
+                <filter name="year_filter" string="دعاوي الجزئية" domain="[('case_no3', '&lt;=' ,1948)]"/>
+                <filter name="year_filter" string="دعاوي استئناف الجزئية" domain="[('case_no3', '&gt;=' ,'1948')]"/>
+                <filter name="year_filter" string="دعاوي القومية العليا" domain="[('case_no3', '&gt;=' ,'1948')]"/>
+
+                <!-- <separator/>
+
+                  >using filter
+                  <filter name="filter_kids" string="Kids" domain="[('age' , '&lt;=' , 7)]"/>
+                   <field name="user_id"
+                                    context="{'default_sales_team_id': team_id}" widget="many2one_avatar_user"/>
+                   using Group By
+                  <group expand="0" string="Group By">
+                       <filter string="Gender" name="group_by_gender" context="{'group_by':'gender'}"/>
+                   </group>
+                   using searching panel
+                   <searchpanel>
+                       <field name="gender" string="Gender" icon="fa-users" select="multi" enable_counters="1"/>
+                   </searchpanel> -->
+
+
+            </search>
+        </field>
+    </record>
+
+
+    <record id="view_case_archive_process_form" model="ir.ui.view">
+        <field name="name">case_archive_process_form</field>
+        <field name="model">archive.process</field>
+        <field name="arch" type="xml">
+            <form string="Model Patient">
+                <sheet>
+                    <group>
+                        <group>
+
+
+                            <field name="case_no1"/>
+                            <field name="case_no2"/>
+                            <field name="case_no3"/>
+                            <field name="case_owner"/>
+
+                        </group>
+
+                        <group>
+                            <field name="court_members1"/>
+                            <field name="court_members2"/>
+                            <field name="court_members3"/>
+                            <field name="case_date"/>
+
+                            <field name="active" invisible="1"/>
+
+
+
+                        </group>
+                        <field name="case_text_info"/>
+                    </group>
+                </sheet>
+                <!--add chatter-->
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+
+            </form>
+        </field>
+    </record>
+
+    <record id="action_case_archive_process" model="ir.actions.act_window">
+        <field name="name"> أرشفة الدعوي</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">archive.process</field>
+        <field name="view_mode">tree,form</field>
+        <!-- set a default filter -->
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                hi  please insert new record
+            </p>
+        </field>
+
+    </record>
+
+
+
+
+
+
+
+    <menuitem id="archive_process"
+              name="أرشفة الدعوي"
+              action="action_case_archive_process"
+              parent="menu_archive_master"
+              sequence="0"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</odoo>

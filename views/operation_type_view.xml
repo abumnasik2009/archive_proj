@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_operation_type_tree" model="ir.ui.view">
+        <field name="name">operation_type_tree</field>
+        <field name="model">operation.type</field>
+        <field name="arch" type="xml">
+            <tree string="Model operation">
+
+                <field name="casename"/>
+
+
+
+
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_operation_type_search" model="ir.ui.view">
+        <field name="name">operation_type_search</field>
+        <field name="model">operation.type</field>
+        <field name="arch" type="xml">
+            <search>
+
+                <field name="casename"/>
+            </search>
+        </field>
+    </record>
+
+
+    <record id="view_operation_type_form" model="ir.ui.view">
+        <field name="name">operation_type_form</field>
+        <field name="model">operation.type</field>
+        <field name="arch" type="xml">
+            <form string="Model Patient">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="casename"/>
+
+
+
+                        </group>
+                        <group>
+
+                        </group>
+                    </group>
+                </sheet>
+                <!--add chatter
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>   -->
+
+            </form>
+        </field>
+    </record>
+
+    <record id="action_operation_type" model="ir.actions.act_window">
+        <field name="name">شاشة الاجراءات</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">operation.type</field>
+        <field name="view_mode">tree,form</field>
+        <!-- set a default filter -->
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                hi  please insert new record
+            </p>
+        </field>
+
+    </record>
+
+
+
+
+
+
+
+    <menuitem id="operation1"
+              name="انواع الاجراءات "
+              action="action_operation_type"
+              parent="configuration"
+              sequence="0"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</odoo>

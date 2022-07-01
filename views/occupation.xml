@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_archive_occupation_tree" model="ir.ui.view">
+        <field name="name">archive_occupation_tree</field>
+        <field name="model">archive.occupation</field>
+        <field name="arch" type="xml">
+            <tree string="Model occupation">
+                <field name="occupation_name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_archive_occupation_search" model="ir.ui.view">
+        <field name="name">archive_occupation</field>
+        <field name="model">archive.occupation</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="occupation_name"/>
+            </search>
+        </field>
+    </record>
+
+
+    <record id="view_archive_occupation_form" model="ir.ui.view">
+        <field name="name">archive_occupation_form</field>
+        <field name="model">archive.occupation</field>
+        <field name="arch" type="xml">
+            <form string="Model occupation">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="occupation_name"/>
+                            <!-- <field name="active" invisible="1"/>-->
+                        </group>
+                        <group>
+
+                        </group>
+                    </group>
+                </sheet>
+                <!--add chatter
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div> -->
+            </form>
+        </field>
+    </record>
+
+    <record id="action_archive_occupation" model="ir.actions.act_window">
+        <field name="name">التخصصات</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">archive.occupation</field>
+        <field name="view_mode">tree,form</field>
+        <!-- set a default filter -->
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                hi frazdaq please insert new record
+            </p>
+        </field>
+
+    </record>
+
+
+    <menuitem id="occupation"
+              name="التخصص"
+              action="action_archive_occupation"
+              parent="configuration"
+              sequence="0"/>
+
+
+
+
+
+
+
+
+</odoo>
